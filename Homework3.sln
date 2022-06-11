@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3", "Homework3\Homework3.csproj", "{E485AE95-5392-45D7-9327-63827C5BAD7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBStudyLib", "..\Homework1e4\GBStudyLib\GBStudyLib.csproj", "{155C8A80-BEB4-4824-99BD-28DF18A2B2ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E485AE95-5392-45D7-9327-63827C5BAD7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E485AE95-5392-45D7-9327-63827C5BAD7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E485AE95-5392-45D7-9327-63827C5BAD7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E485AE95-5392-45D7-9327-63827C5BAD7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{155C8A80-BEB4-4824-99BD-28DF18A2B2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155C8A80-BEB4-4824-99BD-28DF18A2B2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155C8A80-BEB4-4824-99BD-28DF18A2B2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155C8A80-BEB4-4824-99BD-28DF18A2B2ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9AAF80D-E7AF-46AF-9B2A-415E5703B9F2}
+	EndGlobalSection
+EndGlobal

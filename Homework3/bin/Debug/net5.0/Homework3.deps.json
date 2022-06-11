@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Homework3/1.0.0": {
+        "dependencies": {
+          "GBStudyLib": "1.0.0"
+        },
+        "runtime": {
+          "Homework3.dll": {}
+        }
+      },
+      "GBStudyLib/1.0.0": {
+        "runtime": {
+          "GBStudyLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Homework3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GBStudyLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
