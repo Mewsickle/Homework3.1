@@ -46,70 +46,100 @@ namespace Homework3
         static void Main(string[] args)
         {
             Console.Title = "Домашнее задание 3";
-            Console.WriteLine("Здравствуйте, Юзер!/nДобро пожаловать в меню выбора программ!");
-            Console.WriteLine("//////////////////////////////////////////////////////////////");
-            Console.WriteLine("Пожалуйста введите номер программы!");
-            Console.WriteLine("//////////////////////////////////////////////////////////////");
-            Console.WriteLine("1:Демонстрация вычитание комплексных чисел");
-            Console.WriteLine("2:Демонстрация умножения комплексных чисел");
-            Console.WriteLine("3:Программа подсчета нечетных положительных чисел (tryParse");
-
-
-
-
-            Console.WriteLine("//////////////////////////////////////////////////////////////");
-
-            string menuSwitch = (Console.ReadLine());
-            bool result = int.TryParse(menuSwitch, out var number);
-            if (result == true) 
+            Console.WriteLine("Здравствуйте, Юзер! Добро пожаловать в меню выбора программ!");
+            Console.WriteLine("//////////////////////////////////////////////////////////////////////////");
+            Menu();
+            static void Menu()
             {
-                switch (number)
+                
+                Console.WriteLine("Пожалуйста введите номер программы!");
+                Console.WriteLine("//////////////////////////////////////////////////////////////////////////");
+                Console.WriteLine("1:Демонстрация вычитание комплексных чисел");
+                Console.WriteLine("2:Демонстрация умножения комплексных чисел");
+                Console.WriteLine("3:Программа подсчета нечетных положительных чисел (tryParse)");
+
+
+
+
+                Console.WriteLine("//////////////////////////////////////////////////////////////////////////");
+
+                string menuSwitch = (Console.ReadLine());
+                bool result = int.TryParse(menuSwitch, out var number);
+                if (result == true)
                 {
-                    case 1:
-                        Opt1();
-                        break;
-                    case 2:
-                        Opt2();
-                        break;
-                    case 3:
-                        SumOdd();
-                        break;
+                    switch (number)
+                    {
+                        case 1:
+                            Opt1();
+                            break;
+                        case 2:
+                            Opt2();
+                            break;
+                        case 3:
+                            SumOdd();
+                            break;
 
+                    }
                 }
-            }
-            
-                 else
-                    Console.WriteLine($"Ошибка! Пожалуйста введите числовое значение!");
-            
-            
 
-            
-        static void Opt1()
+                else
+                    Console.WriteLine($"Ошибка! Пожалуйста введите числовое значение!");
+
+            }
+
+
+
+
+            static void Opt1()
             {
+                Console.Title = "Вычитание комплексных чисел";
                 Complex complex1 = new Complex();
-                complex1.re = 3;
-                complex1.im = 5;
+                Console.WriteLine("Значения для первого комлексного числа (a1 + b1*i)");
+                Console.WriteLine("Введите значение а1");
+                complex1.re = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите значение b1");
+                complex1.im = int.Parse(Console.ReadLine()); 
 
                 Complex complex2 = new Complex();
-                complex2.re = 2;
-                complex2.im = 3;
+                Console.WriteLine("Значения для второго комлексного числа (a2 + b2*i)");
+                Console.WriteLine("Введите значение а2");
+                complex2.re = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите значение b2");
+                complex2.im = int.Parse(Console.ReadLine()); 
                 Complex result = complex1.Minus(complex2);
+                Console.WriteLine("--------------------------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------------------------");
                 Console.WriteLine($"({complex1.re} + {complex1.im}*i) - ({complex2.re} + {complex2.im}*i) = {result.ToString()}");
+                Console.WriteLine("--------------------------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------------------------");
+                Menu();
                 
             }
             
         static void Opt2()
             {
+                Console.Title = "Умноженмие комплексных чисел";
                 Complex complex1 = new Complex();
-                complex1.re = 3;
-                complex1.im = 5;
-             
+                Console.WriteLine("Значения для первого комлексного числа (a1 + b1*i)");
+                Console.WriteLine("Введите значение а1");
+                complex1.re = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите значение b1");
+                complex1.im = int.Parse(Console.ReadLine());
+
                 Complex complex2 = new Complex();
-                complex2.re = 2;
-                complex2.im = 3;
+                Console.WriteLine("Значения для второго комлексного числа (a2 + b2*i)");
+                Console.WriteLine("Введите значение а2");
+                complex2.re = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите значение b2");
+                complex2.im = int.Parse(Console.ReadLine()); 
                 Complex _result = complex1.Multi(complex2);
+                Console.WriteLine("--------------------------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------------------------");
                 Console.WriteLine($"({complex1.re} + {complex1.im}*i) * ({complex2.re} + {complex2.im}*i) = {_result.ToString()}");
-                
+                Console.WriteLine("--------------------------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------------------------");
+                Menu();
+
             }    
             
         }
@@ -146,6 +176,7 @@ namespace Homework3
                 
                 else if (result == false)
                 {
+
                     Console.WriteLine($"Ошибка ввода! Введите числовое значение");
                 }
 
@@ -157,13 +188,18 @@ namespace Homework3
 
             while (checknum != 0 && checkbool == true);
 
-
+            Console.WriteLine("--------------------------------------------------------------------------");
+            Console.WriteLine("--------------------------------------------------------------------------");
             Console.WriteLine($"Сумма нечетных положительных чисел = {sum}.");
-           
+            Console.WriteLine("--------------------------------------------------------------------------");
+            Console.WriteLine("--------------------------------------------------------------------------");
+            
+            
 
 
         }
+        
+
 
     }
-
 }
