@@ -52,22 +52,36 @@ namespace Homework3
             Console.WriteLine("//////////////////////////////////////////////////////////////");
             Console.WriteLine("1:Демонстрация вычитание комплексных чисел");
             Console.WriteLine("2:Демонстрация умножения комплексных чисел");
-            
+            Console.WriteLine("3:Программа подсчета нечетных положительных чисел (tryParse");
+
+
 
 
             Console.WriteLine("//////////////////////////////////////////////////////////////");
 
-            int menuSwitch = int.Parse(Console.ReadLine());
-            switch (menuSwitch)
+            string menuSwitch = (Console.ReadLine());
+            bool result = int.TryParse(menuSwitch, out var number);
+            if (result == true) 
             {
-                case 1:
-                    Opt1();
-                    break;
-                case 2:
-                    Opt2();
-                    break;
-                    
+                switch (number)
+                {
+                    case 1:
+                        Opt1();
+                        break;
+                    case 2:
+                        Opt2();
+                        break;
+                    case 3:
+                        SumOdd();
+                        break;
+
+                }
             }
+            
+                 else
+                    Console.WriteLine($"Ошибка! Пожалуйста введите числовое значение!");
+            
+            
 
             
         static void Opt1()
@@ -98,6 +112,56 @@ namespace Homework3
                 
             }    
             
+        }
+
+        static void SumOdd()
+        {
+            Console.Title = "3:Метод подсчета суммы всех нечетных положительных чисел";
+
+            
+            
+            int checknum;
+            bool checkbool;
+            int sum = 0;
+            
+
+
+
+            static bool NotOdd(int x)
+            {
+                return x % 2 != 0;
+            }
+
+
+            do
+            {
+                Console.WriteLine("Пожалуйста введите число, введите 0 если хотите подсчитать сумму нечетных положительных чисел");
+                string input = Console.ReadLine();
+                bool result = int.TryParse(input, out int number);
+                if (result == true && NotOdd(number) && number > 0)
+                {
+
+                    sum = sum + number;
+                }
+                
+                else if (result == false)
+                {
+                    Console.WriteLine($"Ошибка ввода! Введите числовое значение");
+                }
+
+                checknum = number;
+                checkbool = result;
+
+
+            }
+
+            while (checknum != 0 && checkbool == true);
+
+
+            Console.WriteLine($"Сумма нечетных положительных чисел = {sum}.");
+           
+
+
         }
 
     }
