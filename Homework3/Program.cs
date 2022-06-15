@@ -16,31 +16,8 @@ using GBStudyLib;
 //   Студент Ким Алексей 
 namespace Homework3
 {
-    
-    //struct Complex
-    //{
-    //    public double im;
-    //    public double re;
 
-        
-    //    public Complex Minus(Complex x)
-    //    {
-    //        Complex y;
-    //        y.im = x.im - im;
-    //        y.re = x.re - re;
-    //        return y;
-    //    }
-        
-       
 
-    //    public string ToString()
-    //    {
-    //        return $"{re} + {im} * i";
-    //    }
-        
-    //}
-
-    // b)
     internal class Program
     {
         static void Main(string[] args)
@@ -51,12 +28,14 @@ namespace Homework3
             Menu();
             static void Menu()
             {
-                
+
                 Console.WriteLine("Пожалуйста введите номер программы!");
                 Console.WriteLine("//////////////////////////////////////////////////////////////////////////");
                 Console.WriteLine("1:Демонстрация вычитание комплексных чисел");
                 Console.WriteLine("2:Демонстрация умножения комплексных чисел");
                 Console.WriteLine("3:Программа подсчета нечетных положительных чисел (tryParse)");
+                Console.WriteLine("4:Программа подсчета дробей (Alpha test early access)");
+
 
 
 
@@ -78,6 +57,9 @@ namespace Homework3
                         case 3:
                             SumOdd();
                             break;
+                        case 4:
+                            Fractions();
+                            break;
 
                     }
                 }
@@ -98,25 +80,25 @@ namespace Homework3
                 Console.WriteLine("Введите значение а1");
                 complex1.Re = int.Parse(Console.ReadLine());
                 Console.WriteLine("Введите значение b1");
-                complex1.Im = int.Parse(Console.ReadLine()); 
+                complex1.Im = int.Parse(Console.ReadLine());
 
                 Complex complex2 = new Complex();
                 Console.WriteLine("Значения для второго комлексного числа (a2 + b2*i)");
                 Console.WriteLine("Введите значение а2");
                 complex2.Re = int.Parse(Console.ReadLine());
                 Console.WriteLine("Введите значение b2");
-                complex2.Im = int.Parse(Console.ReadLine()); 
+                complex2.Im = int.Parse(Console.ReadLine());
                 Complex result = complex1.Minus(complex2);
                 Console.WriteLine("--------------------------------------------------------------------------");
                 Console.WriteLine("--------------------------------------------------------------------------");
-                Console.WriteLine($"({complex1.Re} + {complex1.Im}*i) - ({complex2.Re} + {complex2.Im}*i) = {result.ToString()}");
+                Console.WriteLine($"({complex1.Re} + {complex1.Im}*i) - ({complex2.Re} + {complex2.Im}*i) = {result}");
                 Console.WriteLine("--------------------------------------------------------------------------");
                 Console.WriteLine("--------------------------------------------------------------------------");
                 Menu();
-                
+
             }
-            
-        static void Opt2()
+
+            static void Opt2()
             {
                 Console.Title = "Умноженмие комплексных чисел";
                 Complex complex1 = new Complex();
@@ -131,29 +113,29 @@ namespace Homework3
                 Console.WriteLine("Введите значение а2");
                 complex2.Re = int.Parse(Console.ReadLine());
                 Console.WriteLine("Введите значение b2");
-                complex2.Im = int.Parse(Console.ReadLine()); 
+                complex2.Im = int.Parse(Console.ReadLine());
                 Complex _result = complex1.Multi(complex2);
                 Console.WriteLine("--------------------------------------------------------------------------");
                 Console.WriteLine("--------------------------------------------------------------------------");
-                Console.WriteLine($"({complex1.Re} + {complex1.Im}*i) * ({complex2.Re} + {complex2.Im}*i) = {_result.ToString()}");
+                Console.WriteLine($"({complex1.Re} + {complex1.Im}*i) * ({complex2.Re} + {complex2.Im}*i) = {_result}");
                 Console.WriteLine("--------------------------------------------------------------------------");
                 Console.WriteLine("--------------------------------------------------------------------------");
                 Menu();
 
-            }    
-            
+            }
+
         }
 
         static void SumOdd()
         {
             Console.Title = "3:Метод подсчета суммы всех нечетных положительных чисел";
 
-            
-            
+
+
             int checknum;
             bool checkbool;
             int sum = 0;
-            
+
 
 
 
@@ -173,7 +155,7 @@ namespace Homework3
 
                     sum = sum + number;
                 }
-                
+
                 else if (result == false)
                 {
 
@@ -193,13 +175,23 @@ namespace Homework3
             Console.WriteLine($"Сумма нечетных положительных чисел = {sum}.");
             Console.WriteLine("--------------------------------------------------------------------------");
             Console.WriteLine("--------------------------------------------------------------------------");
-            
-            
+
+
 
 
         }
-        
 
+        static void Fractions()
+        {
+            Fraction a = new Fraction(2, 3);
+            Fraction b = new Fraction(6, 7);
+
+            // Fraction res = Fraction.Plus( a,  b); 
+            Console.WriteLine($"{a} + {b}");   // Выдает мне нули в дроби, не знаю почему.
+            Console.ReadKey();
+
+        }
 
     }
+    
 }
